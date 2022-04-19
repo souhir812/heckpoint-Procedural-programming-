@@ -1,0 +1,25 @@
+ALGORITHM vectors_orthogonal
+VAR
+    arr1,arr2:ARRAY_OF INTEGER [10];
+    i:INTEGER;
+BEGIN
+    FOR i FROM 0 TO arr1.length-1 STEP 1  DO
+        Read (arr1[i])
+        Read (arr2[i])
+    END_FOR
+IF (dot_product(arr1,arr2)=0) THEN
+    write("vectors are orthogonal")
+ELSE
+     write("vectors are not orthogonal")
+END_IF
+END
+FUNCTION dot_product(tab1,tab2:ARRAY_OF INTEGER) :INTEGER
+VAR
+    sum:INTEGER:=0;
+    i:INTEGER;
+BEGIN
+    FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+      sum:=sum+tab1[i]*tab2[i] ; 
+    END_FOR
+    RETURN sum ;
+END
